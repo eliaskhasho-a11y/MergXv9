@@ -1,3 +1,4 @@
+import { useAI } from "../../hooks/useAI";
 import { useEffect, useState } from "react";
 import "./AICommentBox.css";
 
