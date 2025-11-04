@@ -1,16 +1,42 @@
 .economic-chart {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 18px;
-  padding: 20px 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px 35px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
 .economic-chart h2 {
-  color: #e6e6e6;
-  font-weight: 600;
-  font-size: 1.25rem;
+  color: #00e5ff;
+  font-weight: 700;
+  font-size: 1.4rem;
   margin-bottom: 15px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+}
+
+.bar-label {
+  fill: #aaf7ff;
+  font-size: 0.75rem;
+  text-anchor: middle;
+  font-weight: 600;
+}
+
+.custom-tooltip {
+  background: rgba(20, 20, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.tooltip-title {
+  color: #00e5ff;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
