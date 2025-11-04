@@ -1,0 +1,16 @@
+.economic-chart {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 18px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.economic-chart h2 {
+  color: #e6e6e6;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
