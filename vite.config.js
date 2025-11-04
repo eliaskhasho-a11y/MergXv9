@@ -4,6 +4,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
+  root: ".", // gör att index.html hittas korrekt av Vercel
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -13,12 +14,16 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: "./index.html", // <-- viktigt för Vercel
+      input: path.resolve(__dirname, "index.html"),
     },
   },
   server: {
     port: 5173,
     open: true,
     historyApiFallback: true,
+  },
+  preview: {
+    port: 4173,
+    open: true,
   },
 });
