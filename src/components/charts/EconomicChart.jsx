@@ -1,73 +1,60 @@
+import React from "react";
 import {
   ResponsiveContainer,
   BarChart,
   Bar,
   Line,
+  LineChart,
+  CartesianGrid,
   XAxis,
   YAxis,
   Tooltip,
-  CartesianGrid,
 } from "recharts";
+import "./EconomicChart.css";
 
 const data = [
-  { name: "Jan", Intäkter: 50000, Kostnader: 30000, Resultat: 20000 },
-  { name: "Feb", Intäkter: 75000, Kostnader: 43000, Resultat: 32000 },
-  { name: "Mar", Intäkter: 80000, Kostnader: 52000, Resultat: 28000 },
-  { name: "Apr", Intäkter: 120000, Kostnader: 87000, Resultat: 33000 },
-  { name: "Maj", Intäkter: 95000, Kostnader: 71000, Resultat: 24000 },
-  { name: "Jun", Intäkter: 125000, Kostnader: 73400, Resultat: 51600 },
+  { month: "Jan", income: 50000, cost: 30000, result: 20000 },
+  { month: "Feb", income: 75000, cost: 42000, result: 33000 },
+  { month: "Mar", income: 83000, cost: 50000, result: 33000 },
+  { month: "Apr", income: 95000, cost: 72000, result: 23000 },
+  { month: "Maj", income: 80000, cost: 55000, result: 25000 },
+  { month: "Jun", income: 125000, cost: 73400, result: 51600 },
 ];
 
-const EconomicChart = () => {
+export default function EconomicChart() {
   return (
-    <div className="chart-card glass-panel">
+    <div className="economic-chart glass-panel">
       <h2>Ekonomisk översikt</h2>
-      <ResponsiveContainer width="100%" height={340}>
-        <BarChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-          <XAxis dataKey="name" stroke="var(--text)" />
-          <YAxis stroke="var(--text)" />
+      <ResponsiveContainer width="100%" height={350}>
+        <BarChart data={data} margin={{ top: 30, right: 20, left: 0, bottom: 10 }}>
+          <CartesianGrid stroke="rgba(255,255,255,0.05)" vertical={false} />
+          <XAxis dataKey="month" stroke="#aaa" />
+          <YAxis stroke="#aaa" />
           <Tooltip
             contentStyle={{
-              background: "var(--panel)",
-              border: "1px solid var(--glass)",
-              borderRadius: "10px",
-              color: "var(--text)",
+              backgroundColor: "rgba(25,25,25,0.85)",
+              border: "none",
+              borderRadius: "12px",
+              color: "#fff",
             }}
           />
-          <Bar
-            dataKey="Intäkter"
-            fill="url(#colorInt)"
-            radius={[10, 10, 0, 0]}
-            barSize={45}
-          />
-          <Bar
-            dataKey="Kostnader"
-            fill="url(#colorCost)"
-            radius={[10, 10, 0, 0]}
-            barSize={45}
-          />
-          <Line
-            type="monotone"
-            dataKey="Resultat"
-            stroke="var(--accent)"
-            strokeWidth={3}
-            dot={{ fill: "var(--accent)", r: 5 }}
-          />
+          <Bar dataKey="income" fill="url(#incomeGradient)" radius={[12, 12, 0, 0]} />
+          <Bar dataKey="cost" fill="url(#costGradient)" radius={[12, 12, 0, 0]} />
+          <Line type="monotone" dataKey="result" stroke="#4ddbbd" strokeWidth={3} dot={false} />
+
           <defs>
-            <linearGradient id="colorInt" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#3beaff" stopOpacity={0.9} />
-              <stop offset="100%" stopColor="#008cff" stopOpacity={0.3} />
+            <linearGradient id="incomeGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3ff0d9" stopOpacity={0.9} />
+              <stop offset="100%" stopColor="#2a9d8f" stopOpacity={0.3} />
             </linearGradient>
-            <linearGradient id="colorCost" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#c799ff" stopOpacity={0.9} />
-              <stop offset="100%" stopColor="#6a00ff" stopOpacity={0.3} />
+
+            <linearGradient id="costGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#c77dff" stopOpacity={0.9} />
+              <stop offset="100%" stopColor="#5f3dc4" stopOpacity={0.3} />
             </linearGradient>
           </defs>
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
-};
-
-export default EconomicChart;
+}
