@@ -1,0 +1,43 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px;
+  color: #e6e6e6;
+}
+
+.dash-header {
+  padding: 20px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dash-header h1 {
+  font-size: 1.6rem;
+  color: #00e5ff;
+  margin: 0;
+}
+
+.dash-header p {
+  margin-top: 4px;
+  color: #a0a0a0;
+  font-size: 0.95rem;
+}
+
+.dash-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Layout för större skärmar */
+@media (min-width: 1000px) {
+  .dash-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+  }
+}
