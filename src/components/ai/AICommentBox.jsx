@@ -3,14 +3,12 @@ import { useEffect, useState } from "react";
 import "./AICommentBox.css";
 
 export default function AICommentBox() {
-  const [comment, setComment] = useState("");
+  const { analyze, loading, output, tier } = useAI();
   const [riskLevel, setRiskLevel] = useState("Låg");
 
   useEffect(() => {
-    // Här kan du senare ersätta med riktig AI-analys:
-    const aiComment =
-      "Likviditetsrisk inom 30 dagar om lageromfördelning ej görs. Förslag skapade.";
-    setComment(aiComment);
+    // Kör en AI-analys direkt när komponenten laddas
+    analyze("Analysera ekonomiska trender och likviditetsrisker för de kommande 30 dagarna.", "Ekonomi");
     setRiskLevel("Medel");
   }, []);
 
@@ -23,7 +21,12 @@ export default function AICommentBox() {
   return (
     <div className="ai-box glass-panel">
       <h2>AI-kommentar</h2>
-      <p className="ai-text">{comment}</p>
+
+      <p className="ai-text">
+        {loading
+          ? "AI analyserar data..."
+          : output || "Ingen analys tillgänglig just nu."}
+      </p>
 
       <div className={`risk-tag risk-${riskLevel.toLowerCase()}`}>
         Risknivå: {riskLevel}
@@ -36,8 +39,12 @@ export default function AICommentBox() {
       </ul>
 
       <small className="ai-footnote">
+        {tier === "plus"
+          ? "Du använder MergX Plus – AI analysen sker via OpenAI API."
+          : "Gratisläge aktivt – AI-svar simuleras lokalt."}
+        <br />
         Obs: Detta är en strukturell prototyp. Nästa version (V9-AI Base)
-        kommer att koppla AI-analys direkt mot realtidsdata.
+        kopplar analys mot realtidsdata.
       </small>
     </div>
   );
