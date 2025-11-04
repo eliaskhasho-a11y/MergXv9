@@ -1,0 +1,58 @@
+// Mockdata för ekonomi – redo att bytas mot AI eller backend senare
+
+export const economyData = [
+  {
+    id: 1,
+    month: "Jan",
+    income: 50000,
+    cost: 32000,
+    result: 18000,
+    growth: "+5%",
+    note: "Stabil start på året",
+  },
+  {
+    id: 2,
+    month: "Feb",
+    income: 75000,
+    cost: 42000,
+    result: 33000,
+    growth: "+72%",
+    note: "Kampanjlyft inom försäljning",
+  },
+  {
+    id: 3,
+    month: "Mar",
+    income: 83000,
+    cost: 50000,
+    result: 33000,
+    growth: "+12%",
+    note: "Kostnader ökade pga lagerpåfyllning",
+  },
+  {
+    id: 4,
+    month: "Apr",
+    income: 95000,
+    cost: 70000,
+    result: 25000,
+    growth: "-5%",
+    note: "Tillfälligt svagare resultat",
+  },
+  {
+    id: 5,
+    month: "Maj",
+    income: 80000,
+    cost: 55000,
+    result: 25000,
+    growth: "+8%",
+    note: "Förbättring i marginaler",
+  },
+  {
+    id: 6,
+    month: "Jun",
+    income: 125000,
+    cost: 73400,
+    result: 51600,
+    growth: "+24%",
+    note: "Rekordmånad tack vare kampanjer",
+  },
+];
