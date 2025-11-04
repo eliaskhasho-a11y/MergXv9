@@ -1,35 +1,32 @@
-import { useAI } from "../../hooks/useAI";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AICommentBox.css";
 
 export default function AICommentBox() {
-  const { analyze, loading, output, tier } = useAI();
+  const [comment, setComment] = useState("");
   const [riskLevel, setRiskLevel] = useState("Låg");
 
   useEffect(() => {
-    // Kör en AI-analys direkt när komponenten laddas
-    analyze("Analysera ekonomiska trender och likviditetsrisker för de kommande 30 dagarna.", "Ekonomi");
+    // Simulerad AI-analys — detta ersätts senare av riktig MergX AI-modul
+    const aiComment =
+      "Likviditetsrisk inom 30 dagar om lagerfördelning ej justeras. " +
+      "AI föreslår balansering mellan Ekonomi och Lager för att säkra stabilitet.";
+    setComment(aiComment);
     setRiskLevel("Medel");
   }, []);
 
   const suggestions = [
-    "Sammanfattar trender i klartext.",
-    "Föreslår nästa bästa åtgärd per modul (Ekonomi, Lager, CRM, Team).",
-    "Skapar tasks / meddelanden automatiskt vid godkännande.",
+    "📊 Sammanfattar trender i realtid via MergX AI-bas.",
+    "🔁 Föreslår nästa bästa åtgärd per modul (Ekonomi, Lager, CRM, Team).",
+    "🧠 Skapar automatiska notiser och förslag baserat på dataförändringar.",
   ];
 
   return (
     <div className="ai-box glass-panel">
-      <h2>AI-kommentar</h2>
-
-      <p className="ai-text">
-        {loading
-          ? "AI analyserar data..."
-          : output || "Ingen analys tillgänglig just nu."}
-      </p>
+      <h2>AI-Kommentar</h2>
+      <p className="ai-text">{comment}</p>
 
       <div className={`risk-tag risk-${riskLevel.toLowerCase()}`}>
-        Risknivå: {riskLevel}
+        Risknivå: <strong>{riskLevel}</strong>
       </div>
 
       <ul className="ai-list">
@@ -39,12 +36,8 @@ export default function AICommentBox() {
       </ul>
 
       <small className="ai-footnote">
-        {tier === "plus"
-          ? "Du använder MergX Plus – AI analysen sker via OpenAI API."
-          : "Gratisläge aktivt – AI-svar simuleras lokalt."}
-        <br />
-        Obs: Detta är en strukturell prototyp. Nästa version (V9-AI Base)
-        kopplar analys mot realtidsdata.
+        ⚙️ Detta är en strukturell prototyp. Nästa version (V9 AI Base)
+        kopplar automatiskt AI-analys mot realtidsdata.
       </small>
     </div>
   );
