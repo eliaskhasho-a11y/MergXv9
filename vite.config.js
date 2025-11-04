@@ -4,8 +4,8 @@ import { fileURLToPath, URL } from "url";
 
 export default defineConfig({
   plugins: [react()],
-  root: ".", // Projektets rot
-  base: "./", // <- Denna rad löser din path-bugg på Vercel
+  root: ".", // projektets rot
+  base: "./", // gör att alla paths byggs relativt (löser Vercel-problemet)
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -15,7 +15,7 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      input: "index.html",
+      input: "./index.html", // OBS: punkt här också
     },
   },
   server: {
