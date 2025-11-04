@@ -1,15 +1,21 @@
-// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppLayout from "./layout/AppLayout";
+import Dashboard from "./pages/Dashboard";
+import CRM from "./pages/CRM";
+import Ekonomi from "./pages/Ekonomi";
+import Lager from "./pages/Lager";
+
 export default function App() {
   return (
-    <div style={{ 
-      height: "100vh",
-      display: "grid",
-      placeItems: "center",
-      background: "#0a0a0a",
-      color: "#e6faff",
-      fontFamily: "Inter, system-ui, Arial"
-    }}>
-      <div>✅ MergX V9 – baseline kör (Vercel/Vite)</div>
-    </div>
+    <BrowserRouter>
+      <AppLayout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/crm" element={<CRM />} />
+          <Route path="/ekonomi" element={<Ekonomi />} />
+          <Route path="/lager" element={<Lager />} />
+        </Routes>
+      </AppLayout>
+    </BrowserRouter>
   );
 }
