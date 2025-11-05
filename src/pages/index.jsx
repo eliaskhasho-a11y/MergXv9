@@ -11,7 +11,7 @@ import {
   Legend,
 } from "recharts";
 
-// 📊 Dummydata (Ekonomi)
+// ====== DUMMYDATA FÖR EKONOMI ======
 const data = [
   { month: "Jan", income: 50000, cost: 35000, result: 15000 },
   { month: "Feb", income: 75000, cost: 49000, result: 26000 },
@@ -21,7 +21,7 @@ const data = [
   { month: "Jun", income: 125000, cost: 73400, result: 51600 },
 ];
 
-// 📦 Tooltip
+// ====== TOOLTIP ======
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
@@ -49,136 +49,73 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-// 🧠 Dashboard huvudkomponent
-export const DashboardOverview = () => {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h2 style={{ fontSize: "22px", marginBottom: "20px", fontWeight: 600 }}>
-        <span role="img" aria-label="chart">📊</span> MergX V9 Dashboard
-      </h2>
-      <p style={{ color: "#a1a1aa", marginBottom: "25px" }}>
-        Smarter · Simpler · Stronger
-      </p>
+// ====== HUVUDDASHBOARD ======
+export const DashboardOverview = () => (
+  <div style={{ padding: "20px" }}>
+    <h2 style={{ fontSize: "22px", marginBottom: "20px", fontWeight: 600 }}>
+      📊 MergX V9 Dashboard
+    </h2>
+    <p style={{ color: "#a1a1aa", marginBottom: "25px" }}>
+      Smarter · Simpler · Stronger
+    </p>
 
-      {/* KPI-KORT */}
-      <div
-        style={{
-          display: "flex",
-          gap: "15px",
-          marginBottom: "25px",
-          flexWrap: "wrap",
-        }}
-      >
-        <div className="glass-card">
-          <h4>Intäkter</h4>
-          <p style={{ fontSize: "20px", fontWeight: 600 }}>532 000 kr</p>
-        </div>
-        <div className="glass-card">
-          <h4>Kostnader</h4>
-          <p style={{ fontSize: "20px", fontWeight: 600 }}>345 900 kr</p>
-        </div>
-        <div className="glass-card">
-          <h4>Resultat</h4>
-          <p style={{ fontSize: "20px", fontWeight: 600, color: "#4ade80" }}>
-            186 100 kr
-          </p>
-        </div>
-        <div className="glass-card">
-          <h4>Lagerstatus</h4>
-          <p style={{ fontSize: "20px", fontWeight: 600, color: "#38bdf8" }}>
-            94 %
-          </p>
-        </div>
-      </div>
-
-      {/* 📊 GRAF + 🤖 AI-KOMMENTAR */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "2fr 1fr",
-          gap: "20px",
-          marginBottom: "25px",
-        }}
-      >
-        {/* 📊 DIAGRAM */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            borderRadius: "14px",
-            padding: "20px",
-            boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h3 style={{ marginBottom: "10px", color: "#e2e8f0" }}>Ekonomisk översikt</h3>
-          <ResponsiveContainer width="100%" height={320}>
-            <ComposedChart data={data} margin={{ top: 30, right: 30, left: 0, bottom: 10 }}>
-              <CartesianGrid stroke="rgba(255,255,255,0.08)" />
-              <XAxis dataKey="month" stroke="#9ca3af" />
-              <YAxis stroke="#9ca3af" />
-              <Tooltip content={<CustomTooltip />} />
-              <Legend />
-              <Bar dataKey="income" fill="#38bdf8" radius={[8, 8, 0, 0]} barSize={30} name="Intäkter" />
-              <Bar dataKey="cost" fill="#a855f7" radius={[8, 8, 0, 0]} barSize={30} name="Kostnader" />
-              <Line type="monotone" dataKey="result" stroke="#22c55e" strokeWidth={3} name="Resultat" />
-            </ComposedChart>
-          </ResponsiveContainer>
-        </div>
-
-        {/* 🤖 AI-KOMMENTAR */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            borderRadius: "14px",
-            padding: "20px",
-            boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h3 style={{ color: "#38bdf8", marginBottom: "10px" }}>AI-Kommentar</h3>
-          <p style={{ color: "#e5e7eb" }}>
-            Likviditetsrisk inom 30 dagar om lagerfördelning ej justeras. AI föreslår balansering mellan{" "}
-            <strong>Ekonomi</strong> och <strong>Lager</strong> för att säkra stabilitet.
-          </p>
-        </div>
-      </div>
-
-      {/* 🗨️ TEAMCHATT & AI-AKTIVITET */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-        {/* TEAMCHATT */}
-        <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: "14px", padding: "20px" }}>
-          <h3 style={{ color: "#a855f7" }}>💬 Teamchatt</h3>
-          <p style={{ color: "#e5e7eb" }}>
-            Elias: Hej team, hur ser dagens rutter ut? <br />
-            Sara: Jag tar norra rutten – Elon och Power. <br />
-            AI: Förslag: Lägg till besök hos Mekonomen Solna på vägen.
-          </p>
-        </div>
-
-        {/* AI-AKTIVITET */}
-        <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: "14px", padding: "20px" }}>
-          <h3 style={{ color: "#38bdf8" }}>🤖 AI-Aktivitet</h3>
-          <ul style={{ color: "#d4d4d8", fontSize: "14px" }}>
-            <li>✅ Uppdaterade försäljningsrutter – 10:32</li>
-            <li>📄 Genererade rapport: ”Ekonomisk balans – Q4”</li>
-            <li>💡 Förslag: ”Minska lagerkostnad för USB-C 1 m kablar”</li>
-          </ul>
-        </div>
-      </div>
+    {/* KPI-KORT */}
+    <div style={{ display: "flex", gap: "15px", marginBottom: "25px" }}>
+      <div className="glass-card"><h4>Intäkter</h4><p>532 000 kr</p></div>
+      <div className="glass-card"><h4>Kostnader</h4><p>345 900 kr</p></div>
+      <div className="glass-card"><h4>Resultat</h4><p>186 100 kr</p></div>
+      <div className="glass-card"><h4>Lagerstatus</h4><p>94 %</p></div>
     </div>
-  );
-};
 
-// 🧩 Dummy-komponenter för att build ska fungera (ersätts senare)
+    {/* GRAF */}
+    <div
+      style={{
+        background: "rgba(255,255,255,0.04)",
+        borderRadius: "14px",
+        padding: "20px",
+      }}
+    >
+      <h3 style={{ marginBottom: "10px", color: "#e2e8f0" }}>Ekonomisk översikt</h3>
+      <ResponsiveContainer width="100%" height={320}>
+        <ComposedChart data={data}>
+          <CartesianGrid stroke="rgba(255,255,255,0.08)" />
+          <XAxis dataKey="month" stroke="#9ca3af" />
+          <YAxis stroke="#9ca3af" />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend />
+          <Bar dataKey="income" fill="#38bdf8" radius={[8, 8, 0, 0]} />
+          <Bar dataKey="cost" fill="#a855f7" radius={[8, 8, 0, 0]} />
+          <Line dataKey="result" stroke="#22c55e" strokeWidth={3} />
+        </ComposedChart>
+      </ResponsiveContainer>
+    </div>
+  </div>
+);
+
+// ====== DUMMY-KOMPONENTER (temporärt för att build ska fungera) ======
 export const AiAnalys = () => (
-  <div style={{ padding: "40px", color: "white" }}>AI-Analys laddad korrekt.</div>
+  <div style={{ padding: "40px", color: "#fff" }}>AI-Analys laddad korrekt ✅</div>
 );
 
 export const KpiPanel = () => (
-  <div style={{ padding: "40px", color: "white" }}>KPI-panel laddad korrekt.</div>
+  <div style={{ padding: "40px", color: "#fff" }}>KPI-panel laddad korrekt ✅</div>
 );
 
 export const Handelser = () => (
-  <div style={{ padding: "40px", color: "white" }}>Händelser laddad korrekt.</div>
+  <div style={{ padding: "40px", color: "#fff" }}>Händelser laddad korrekt ✅</div>
 );
 
-// ✅ Exportera även DashboardOverview som default
+export const Schema = () => (
+  <div style={{ padding: "40px", color: "#fff" }}>Schema laddad korrekt ✅</div>
+);
+
+export const Uppgifter = () => (
+  <div style={{ padding: "40px", color: "#fff" }}>Uppgifter laddad korrekt ✅</div>
+);
+
+export const Chatt = () => (
+  <div style={{ padding: "40px", color: "#fff" }}>Chatt laddad korrekt ✅</div>
+);
+
+// ====== STANDARD EXPORT ======
 export default DashboardOverview;
