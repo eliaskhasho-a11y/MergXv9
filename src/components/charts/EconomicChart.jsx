@@ -1,103 +1,68 @@
 import React from "react";
 import {
-  ResponsiveContainer,
-  ComposedChart,
+  BarChart,
   Bar,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  LabelList,
+  Legend,
+  ResponsiveContainer,
+  Line,
 } from "recharts";
-import "./EconomicChart.css";
-import { economyData as data } from "../../data/economyData";
 
-// Anpassad tooltip med ekonomiska detaljer
-const CustomTooltip = ({ active, payload, label }) => {
-  if (active && payload && payload.length) {
-    const income = payload.find((p) => p.dataKey === "income")?.value || 0;
-    const cost = payload.find((p) => p.dataKey === "cost")?.value || 0;
-    const result = payload.find((p) => p.dataKey === "result")?.value || 0;
-    return (
-      <div className="custom-tooltip glass-tooltip">
-        <p className="tooltip-title">{label}</p>
-        <p>💰 Intäkter: {income.toLocaleString()} kr</p>
-        <p>💸 Kostnader: {cost.toLocaleString()} kr</p>
-        <p>📊 Resultat: {result.toLocaleString()} kr</p>
-      </div>
-    );
-  }
-  return null;
-};
+const data = [
+  { name: "Jan", intakt: 50000, kostnad: 35000, resultat: 15000 },
+  { name: "Feb", intakt: 75000, kostnad: 49000, resultat: 26000 },
+  { name: "Mar", intakt: 80000, kostnad: 52000, resultat: 28000 },
+  { name: "Apr", intakt: 110000, kostnad: 73500, resultat: 36500 },
+  { name: "Maj", intakt: 92000, kostnad: 63000, resultat: 29000 },
+  { name: "Jun", intakt: 125000, kostnad: 73400, resultat: 51600 },
+];
 
-export default function EconomicChart() {
-  const lastNote = data[data.length - 1]?.note || "Ingen notering tillgänglig";
-
+export default function EconomyChart() {
   return (
-    <div className="economic-chart glass-panel">
-      <h2>Ekonomisk översikt</h2>
-
-      <ResponsiveContainer width="100%" height={360}>
-        <ComposedChart
-          data={data}
-          margin={{ top: 40, right: 40, left: 20, bottom: 20 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-          <XAxis dataKey="month" tick={{ fill: "#ccc" }} />
-          <YAxis
-            tick={{ fill: "#888" }}
-            tickFormatter={(v) => v.toLocaleString("sv-SE")}
+    <div style={{ width: "100%", height: 300 }}>
+      <ResponsiveContainer>
+        <BarChart data={data}>
+          <CartesianGrid strokeDasharray="3 3" opacity={0.1} />
+          <XAxis dataKey="name" stroke="#ccc" />
+          <YAxis stroke="#ccc" />
+          <Tooltip
+            contentStyle={{
+              background: "rgba(0,0,0,0.8)",
+              border: "none",
+              borderRadius: "10px",
+              color: "#fff",
+            }}
           />
-          <Tooltip content={<CustomTooltip />} />
-
-          {/* Staplar för Intäkter och Kostnader */}
-          <Bar dataKey="income" fill="url(#colorIncome)" radius={[6, 6, 0, 0]}>
-            <LabelList
-              dataKey="income"
-              position="top"
-              formatter={(v) => v.toLocaleString("sv-SE") + " kr"}
-              style={{ fill: "#0ff", fontSize: 10 }}
-            />
-          </Bar>
-          <Bar dataKey="cost" fill="url(#colorCost)" radius={[6, 6, 0, 0]}>
-            <LabelList
-              dataKey="cost"
-              position="top"
-              formatter={(v) => v.toLocaleString("sv-SE") + " kr"}
-              style={{ fill: "#c080ff", fontSize: 10 }}
-            />
-          </Bar>
-
-          {/* Linje för resultat */}
+          <Legend />
+          <Bar dataKey="intakt" fill="url(#intaktColor)" radius={[8, 8, 0, 0]} />
+          <Bar dataKey="kostnad" fill="url(#kostnadColor)" radius={[8, 8, 0, 0]} />
           <Line
             type="monotone"
-            dataKey="result"
-            stroke="#00e5ff"
-            strokeWidth={2.5}
-            dot={{ r: 5 }}
-            activeDot={{ r: 7, fill: "#00e5ff" }}
+            dataKey="resultat"
+            stroke="#00d1ff"
+            strokeWidth={2}
+            dot={{ r: 3 }}
           />
 
-          {/* Gradienter för snyggare färgtoner */}
           <defs>
-            <linearGradient id="colorIncome" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#00e5ff" stopOpacity={0.9} />
-              <stop offset="95%" stopColor="#00e5ff" stopOpacity={0.2} />
+            <linearGradient id="intaktColor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#00d1ff" stopOpacity={0.9} />
+              <stop offset="100%" stopColor="#0066ff" stopOpacity={0.2} />
             </linearGradient>
-            <linearGradient id="colorCost" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#c080ff" stopOpacity={0.9} />
-              <stop offset="95%" stopColor="#c080ff" stopOpacity={0.2} />
+            <linearGradient id="kostnadColor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#a566ff" stopOpacity={0.9} />
+              <stop offset="100%" stopColor="#6a00ff" stopOpacity={0.2} />
             </linearGradient>
           </defs>
-        </ComposedChart>
+        </BarChart>
       </ResponsiveContainer>
 
-      <div className="data-summary">
-        <p>
-          🔍 Senaste notering: <strong>{lastNote}</strong>
-        </p>
-      </div>
+      <p style={{ fontSize: "0.9rem", marginTop: "0.5rem", opacity: 0.8 }}>
+        🔍 Senaste notering: <strong>Bästa månaden hittills – positiv resultattrend.</strong>
+      </p>
     </div>
   );
 }
