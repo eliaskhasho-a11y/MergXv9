@@ -1,44 +1,93 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import "./styles/glass.css";
 
-// Sidor
-import Dashboard from "./pages/Dashboard";
-import CRM from "./pages/CRM";
-import Ekonomi from "./pages/Ekonomi";
-import Lager from "./pages/Lager";
-import AIMap from "./pages/AIMap";
-import TeamChat from "./pages/TeamChat";
-
-// CSS
-import "./App.css";
+// Alla sidor (plats­hållare) från en samlad fil:
+import {
+  DashboardOverview, AiAnalys, KpiPanel, Handelser,
+  Schema, Uppgifter, Chatt, Prestanda,
+  LagerOversikt, Artiklar, Bristvarningar, LagerAiForslag,
+  Budget, Fakturor, Kostnader, Kassaflode,
+  Kunder, Leads, Kommunikation, Kundportal,
+  AiKarna, AiCoach, AiRapporter,
+  Uppladdning, Bibliotek, Noteringar,
+  Forsaljning, KostnadMarginal, KpiExport,
+  Roller, Integrationer, Sakerhet,
+  // Workspace, Projects, // (aktiveras i v9.1)
+} from "./pages";
 
 export default function App() {
   return (
-    <div className="app-container">
-      <aside className="sidebar">
-        <h2 className="logo">MergX V9</h2>
-        <nav>
-          <ul>
-            <li><Link to="/">🏠 Dashboard</Link></li>
-            <li><Link to="/crm">📊 CRM</Link></li>
-            <li><Link to="/ekonomi">💰 Ekonomi</Link></li>
-            <li><Link to="/lager">📦 Lager</Link></li>
-            <li><Link to="/ai-karta">🧭 AI-Karta</Link></li>
-            <li><Link to="/teamchatt">💬 Teamchatt</Link></li>
-          </ul>
-        </nav>
-      </aside>
+    <BrowserRouter>
+      <div className="app-shell">
+        <Sidebar />
+        <main className="main-area ml-64">
+          {/* Topbar */}
+          <div className="topbar glass-card">
+            <div className="title">MergX Admin Panel v9 — GLASS Mode</div>
+            <div className="badge">Dark</div>
+          </div>
 
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/crm" element={<CRM />} />
-          <Route path="/ekonomi" element={<Ekonomi />} />
-          <Route path="/lager" element={<Lager />} />
-          <Route path="/ai-karta" element={<AIMap />} />
-          <Route path="/teamchatt" element={<TeamChat />} />
-        </Routes>
-      </main>
-    </div>
+          {/* Innehåll */}
+          <div className="space-y-6">
+            <Routes>
+              {/* Dashboard */}
+              <Route path="/" element={<DashboardOverview />} />
+              <Route path="/ai-analys" element={<AiAnalys />} />
+              <Route path="/kpi-panel" element={<KpiPanel />} />
+              <Route path="/handelser" element={<Handelser />} />
+
+              {/* Anställda & Team */}
+              <Route path="/schema" element={<Schema />} />
+              <Route path="/uppgifter" element={<Uppgifter />} />
+              <Route path="/chatt" element={<Chatt />} />
+              <Route path="/prestanda" element={<Prestanda />} />
+
+              {/* Lager & Inventarie */}
+              <Route path="/lager-oversikt" element={<LagerOversikt />} />
+              <Route path="/artiklar" element={<Artiklar />} />
+              <Route path="/bristvarningar" element={<Bristvarningar />} />
+              <Route path="/lager-ai-forslag" element={<LagerAiForslag />} />
+
+              {/* Ekonomi & Bokföring */}
+              <Route path="/budget" element={<Budget />} />
+              <Route path="/fakturor" element={<Fakturor />} />
+              <Route path="/kostnader" element={<Kostnader />} />
+              <Route path="/kassaflode" element={<Kassaflode />} />
+
+              {/* CRM & Kunder */}
+              <Route path="/kunder" element={<Kunder />} />
+              <Route path="/leads" element={<Leads />} />
+              <Route path="/kommunikation" element={<Kommunikation />} />
+              <Route path="/kundportal" element={<Kundportal />} />
+
+              {/* AI-Kärna & Coach */}
+              <Route path="/ai-karna" element={<AiKarna />} />
+              <Route path="/ai-coach" element={<AiCoach />} />
+              <Route path="/ai-rapporter" element={<AiRapporter />} />
+
+              {/* Filer & Bilagor */}
+              <Route path="/uppladdning" element={<Uppladdning />} />
+              <Route path="/bibliotek" element={<Bibliotek />} />
+              <Route path="/noteringar" element={<Noteringar />} />
+
+              {/* Rapporter & Analys */}
+              <Route path="/forsaljning" element={<Forsaljning />} />
+              <Route path="/kostnad-marginal" element={<KostnadMarginal />} />
+              <Route path="/kpi-export" element={<KpiExport />} />
+
+              {/* Inställningar & Roller */}
+              <Route path="/roller" element={<Roller />} />
+              <Route path="/integrationer" element={<Integrationer />} />
+              <Route path="/sakerhet" element={<Sakerhet />} />
+
+              {/* v9.1 */}
+              {/* <Route path="/workspace" element={<Workspace />} />
+              <Route path="/projects" element={<Projects />} /> */}
+            </Routes>
+          </div>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
