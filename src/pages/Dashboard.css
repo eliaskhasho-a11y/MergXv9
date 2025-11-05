@@ -1,43 +1,139 @@
 .dashboard-page {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 30px;
-  color: #e6e6e6;
+  padding: 2rem;
+  color: #eaf7ff;
+  font-family: "Inter", sans-serif;
 }
 
-.dash-header {
-  padding: 20px 28px;
-  border-radius: 18px;
+.subtitle {
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kpi-card {
+  padding: 1.2rem;
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.kpi-card h3 {
+  color: #84cfff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-card p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* --- MAP --- */
+.map-section {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.mock-map {
   background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
-.dash-header h1 {
-  font-size: 1.6rem;
-  color: #00e5ff;
-  margin: 0;
+.store-pin {
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
 }
 
-.dash-header p {
-  margin-top: 4px;
-  color: #a0a0a0;
-  font-size: 0.95rem;
+.store-note {
+  color: #ffcc88;
+  margin-left: 0.4rem;
 }
 
-.dash-content {
+/* --- CHAT --- */
+.chat-section {
+  margin-top: 2rem;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.chat-box {
+  height: 220px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.msg {
+  margin-bottom: 0.5rem;
+}
+
+.msg.me {
+  text-align: right;
+  color: #84cfff;
+}
+
+.chat-input {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
+  gap: 0.5rem;
 }
 
-/* Layout för större skärmar */
-@media (min-width: 1000px) {
-  .dash-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-  }
+.chat-input input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.chat-input button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #00cfff;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- AI FEED --- */
+.ai-feed {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+
+.ai-feed ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-feed li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- GLASS EFFECT --- */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 }
