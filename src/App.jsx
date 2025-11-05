@@ -1,8 +1,9 @@
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import "./styles/glass.css";
 
-// Alla sidor (plats­hållare) från en samlad fil:
+// Importera alla sidor
 import {
   DashboardOverview, AiAnalys, KpiPanel, Handelser,
   Schema, Uppgifter, Chatt, Prestanda,
@@ -13,22 +14,34 @@ import {
   Uppladdning, Bibliotek, Noteringar,
   Forsaljning, KostnadMarginal, KpiExport,
   Roller, Integrationer, Sakerhet,
-  // Workspace, Projects, // (aktiveras i v9.1)
-} from "./pages";
+} from "./pages/index.jsx";
+
+// 🔧 Enkel fallback-komponent (visas om något är fel)
+const NotFound = () => (
+  <div className="glass-card p-6">
+    <h1 className="text-xl font-semibold text-red-400">Sidan kunde inte hittas</h1>
+    <p className="text-zinc-400 mt-2">
+      Kontrollera att din komponent finns i <code>src/pages/index.jsx</code>.
+    </p>
+  </div>
+);
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="app-shell">
+        {/* Sidomeny */}
         <Sidebar />
+
+        {/* Huvudyta */}
         <main className="main-area ml-64">
-          {/* Topbar */}
+          {/* Toppbar */}
           <div className="topbar glass-card">
-            <div className="title">MergX Admin Panel v9 — GLASS Mode</div>
-            <div className="badge">Dark</div>
+            <div className="title">MergX V9 — AI-driven affärs- & analysplattform</div>
+            <div className="badge">Dark / Glass</div>
           </div>
 
-          {/* Innehåll */}
+          {/* Innehållsrouting */}
           <div className="space-y-6">
             <Routes>
               {/* Dashboard */}
@@ -81,9 +94,8 @@ export default function App() {
               <Route path="/integrationer" element={<Integrationer />} />
               <Route path="/sakerhet" element={<Sakerhet />} />
 
-              {/* v9.1 */}
-              {/* <Route path="/workspace" element={<Workspace />} />
-              <Route path="/projects" element={<Projects />} /> */}
+              {/* Fallback */}
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </main>
