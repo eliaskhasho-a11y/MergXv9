@@ -1,4 +1,5 @@
 import React from "react";
+import AiNotificationHub from "../components/ai/AiNotificationHub";
 import AiActionEngine from "../components/ai/AiActionEngine";
 import AiAuditFeed from "../components/ai/AiAuditFeed";
 import AiKpiAnalyzer from "../components/ai/AiKpiAnalyzer";
