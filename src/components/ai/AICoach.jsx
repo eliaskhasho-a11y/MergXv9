@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Send, X, Bot } from "lucide-react";
 import "./AICoach.css";
+import AICoach from "./components/ai/AICoach";
+...
+<AICoach />
 
 // --- Mock-funktion för att hämta aktuell modul ---
 function getActiveModule() {
