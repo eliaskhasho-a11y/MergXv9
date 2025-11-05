@@ -1,0 +1,94 @@
+.ekonomi-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 30px;
+  color: #e6e6e6;
+}
+
+.eko-header {
+  padding: 20px 28px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.eko-header h1 {
+  font-size: 1.5rem;
+  color: #00e5ff;
+  margin: 0;
+}
+
+.eko-header p {
+  color: #a0a0a0;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* KPI-panel */
+.kpi-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
+}
+
+.kpi-card {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s ease;
+}
+
+.kpi-card h3 {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 4px;
+}
+
+.kpi-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.kpi-change {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Färg efter trend */
+.trend-upp .kpi-change {
+  color: #00ffb3;
+}
+.trend-ner .kpi-change {
+  color: #ff6b6b;
+}
+.trend-neutral .kpi-change {
+  color: #ffd93d;
+}
+
+.chart-section {
+  margin-top: 10px;
+}
+
+.ai-section {
+  margin-top: 25px;
+}
+
+/* Anpassning för större skärmar */
+@media (min-width: 1000px) {
+  .kpi-panel {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
