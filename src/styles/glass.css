@@ -1,0 +1,59 @@
+:root {
+  --bg: #0b0b0f;
+  --card: 18, 18, 22;         /* rgb */
+  --border: 255, 255, 255;
+}
+
+html, body, #root {
+  height: 100%;
+  background: radial-gradient(1200px 600px at 10% -10%, rgba(49, 46, 129, .20), transparent 40%),
+              radial-gradient(1200px 600px at 110% 10%, rgba(16, 185, 129, .12), transparent 40%),
+              #0b0b10;
+  color: #e7e7ea;
+}
+
+.glass-card {
+  background: rgba(var(--card), .45);
+  border: 1px solid rgba(var(--border), .08);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 6px 20px rgba(0,0,0,.35);
+}
+
+/* Layout helpers */
+.app-shell {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  min-height: 100vh;
+}
+
+.main-area {
+  padding: 24px;
+  padding-left: 24px;
+}
+
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  margin-bottom: 16px;
+}
+
+.topbar .title {
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(34, 211, 238, .25);
+  background: rgba(34, 211, 238, .12);
+  color: #67e8f9;
+}
