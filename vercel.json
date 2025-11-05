@@ -2,7 +2,7 @@
   "version": 2,
   "name": "mergx-v9",
   "framework": "vite",
-  "installCommand": "npm ci",
+  "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
