@@ -1,6 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Send, X, Bot } from "lucide-react";
 import "./AICoach.css";
+
+// --- Mock-funktion för att hämta aktuell modul ---
+function getActiveModule() {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes("crm")) return "CRM";
+  if (path.includes("ekonomi")) return "Ekonomi";
+  if (path.includes("workspace")) return "Workspace";
+  if (path.includes("project")) return "Project";
+  if (path.includes("lager")) return "Lager";
+  return "Dashboard";
+}
+
+// --- Mock-databas med tips per modul ---
+const aiKnowledge = {
+  Dashboard: [
+    "Dashboard visar nyckeltal från alla moduler.",
+    "Du kan klicka på varje KPI-kort för att expandera analysen.",
+    "Använd AI-ikonen för att få rekommendationer i realtid."
+  ],
+  CRM: [
+    "I CRM hittar du kundregister och fakturering.",
+    "AI kan föreslå nästa kontakt baserat på försäljningsdata.",
+    "Du kan filtrera kunder efter region och status."
+  ],
+  Ekonomi: [
+    "Ekonomimodulen visar intäkter, kostnader och vinst.",
+    "AI kan varna om kommande likviditetsrisker.",
+    "Exportera rapporter som CSV via menyknappen uppe till höger."
+  ],
+  Workspace: [
+    "Workspace fungerar som din personliga Notion-yta.",
+    "Skapa dokument, anteckningar och länka dem till projekt.",
+    "Team Workspace delar filer och statusuppdateringar med hela teamet."
+  ],
+  Project: [
+    "Projektmodulen är Trello-liknande.",
+    "Du kan skapa kolumner för statusar och dra-och-släppa uppgifter.",
+    "AI kan föreslå deadlines baserat på tidigare projektdata."
+  ],
+  Lager: [
+    "Lager visar realtidsstatus och produktnivåer.",
+    "AI föreslår automatiska inköp när lager går under 30 %.",
+    "Du kan koppla leverantörer till produkter via Lagerinställningar."
+  ]
+};
 
 export default function AICoach() {
   const [open, setOpen] = useState(false);
@@ -8,18 +53,28 @@ export default function AICoach() {
     { sender: "ai", text: "Hej 👋 Jag är din MergX-Coach. Vad vill du ha hjälp med idag?" },
   ]);
   const [input, setInput] = useState("");
+  const [activeModule, setActiveModule] = useState("Dashboard");
+
+  useEffect(() => {
+    setActiveModule(getActiveModule());
+  }, []);
 
   const handleSend = () => {
     if (!input.trim()) return;
-    setMessages([...messages, { sender: "user", text: input }]);
+    const userMsg = { sender: "user", text: input };
+    setMessages((prev) => [...prev, userMsg]);
     setInput("");
-    // placeholder-svar – kopplas till MergX-AI i V10
+
+    // simulera AI-svar beroende på modul
     setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        { sender: "ai", text: "Jag förstår. Det här är något jag kan guida dig igenom i nästa uppdatering 💡" },
-      ]);
-    }, 600);
+      const tips = aiKnowledge[activeModule];
+      const randomTip = tips[Math.floor(Math.random() * tips.length)];
+      const aiMsg = {
+        sender: "ai",
+        text: `📍 (${activeModule}) ${randomTip}`
+      };
+      setMessages((prev) => [...prev, aiMsg]);
+    }, 700);
   };
 
   return (
@@ -29,7 +84,7 @@ export default function AICoach() {
         <Bot size={22} />
       </button>
 
-      {/* Popup-chat */}
+      {/* Chat-popup */}
       {open && (
         <div className="ai-chat glass-panel">
           <div className="chat-header">
@@ -51,7 +106,7 @@ export default function AICoach() {
           <div className="chat-input">
             <input
               type="text"
-              placeholder="Skriv ett meddelande..."
+              placeholder={`Fråga något om ${activeModule}...`}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
