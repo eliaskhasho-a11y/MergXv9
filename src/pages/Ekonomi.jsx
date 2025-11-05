@@ -1,4 +1,5 @@
 import React from "react";
+import AiKpiAnalyzer from "../components/ai/AiKpiAnalyzer";
 import KpiTargetPanel from "../components/kpi/KpiTargetPanel";
 import EconomicChart from "../components/charts/EconomicChart";
 import AICommentBox from "../components/ai/AICommentBox";
@@ -30,6 +31,18 @@ export default function Ekonomi() {
           </div>
         ))}
       </section>
+
+      {/* AI-Analys av KPI-status */}
+<section className="ai-kpi-analyzer-section">
+  <AiKpiAnalyzer
+    data={[
+      { role: "Admin", target: 120000, current: 125000 },
+      { role: "Ekonomi", target: 50000, current: 51600 },
+      { role: "Lager", target: 2, current: 3 },
+      { role: "CRM", target: 85, current: 82 },
+    ]}
+  />
+</section>
 
       {/* Ekonomisk graf */}
       <section className="chart-section">
