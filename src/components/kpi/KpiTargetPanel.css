@@ -1,0 +1,78 @@
+.kpi-target {
+  margin-top: 25px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  color: #e6e6e6;
+}
+
+.kpi-target h2 {
+  color: #00e5ff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.kpi-box {
+  border-radius: 14px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s ease;
+}
+
+.kpi-header h3 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.kpi-header span {
+  color: #bbb;
+  font-size: 0.85rem;
+}
+
+.kpi-values p {
+  font-size: 0.85rem;
+  margin: 2px 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+.status-indicator .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-grön .dot {
+  background-color: #00ffb3;
+}
+.status-gul .dot {
+  background-color: #ffd93d;
+}
+.status-röd .dot {
+  background-color: #ff5050;
+}
+
+.status-grön {
+  border-left: 3px solid #00ffb3;
+}
+.status-gul {
+  border-left: 3px solid #ffd93d;
+}
+.status-röd {
+  border-left: 3px solid #ff5050;
+}
