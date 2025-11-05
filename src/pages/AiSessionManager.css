@@ -1,0 +1,88 @@
+.ai-session {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e6e6e6;
+  min-height: 100vh;
+}
+
+.session-header h1 {
+  color: #00e5ff;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.session-header p {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.session-table {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.session-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  background: rgba(0,0,0,0.25);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+}
+.session-row:hover {
+  background: rgba(255,255,255,0.06);
+}
+.session-row.active {
+  border-left: 3px solid #00e5ff;
+  background: rgba(255,255,255,0.08);
+}
+
+.role {
+  font-size: 0.85rem;
+  padding: 3px 6px;
+  border-radius: 6px;
+  text-transform: capitalize;
+  text-align: center;
+}
+.role-admin { background: rgba(0,229,255,0.2); color: #00e5ff; }
+.role-developer { background: rgba(255,217,61,0.2); color: #ffd93d; }
+.role-viewer { background: rgba(180,180,180,0.2); color: #ccc; }
+
+.token {
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+.token-valid { background: rgba(0,255,150,0.2); color: #00ffb3; }
+.token-expired { background: rgba(255,80,80,0.2); color: #ff5050; }
+
+.session-details {
+  margin-top: 25px;
+  padding: 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+}
+.logout-btn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background: rgba(255,80,80,0.25);
+  cursor: pointer;
+  transition: all .25s;
+}
+.logout-btn:hover { background: rgba(255,80,80,0.35); }
+
+.session-footnote {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 25px;
+}
