@@ -1,12 +1,13 @@
 {
   "version": 2,
+  "name": "mergx-v9",
   "framework": "vite",
-  "installCommand": "npm install",
+  "installCommand": "npm ci",
   "buildCommand": "npm run build",
-  "devCommand": "vite",
   "outputDirectory": "dist",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
