@@ -49,15 +49,12 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-// 🧠 Huvudkomponent
-export default function DashboardOverview() {
+// 🧠 Dashboard – namngiven export
+export const DashboardOverview = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h2 style={{ fontSize: "22px", marginBottom: "20px", fontWeight: 600 }}>
-        <span role="img" aria-label="chart">
-          📊
-        </span>{" "}
-        MergX V9 Dashboard
+        <span role="img" aria-label="chart">📊</span> MergX V9 Dashboard
       </h2>
       <p style={{ color: "#a1a1aa", marginBottom: "25px" }}>
         Smarter · Simpler · Stronger
@@ -149,8 +146,7 @@ export default function DashboardOverview() {
             </ComposedChart>
           </ResponsiveContainer>
           <p style={{ fontSize: "14px", marginTop: "10px", color: "#a1a1aa" }}>
-            🔍 Senaste notering:{" "}
-            <strong>Bästa månaden hittills – positiv resultattrend.</strong>
+            🔍 Senaste notering: <strong>Bästa månaden hittills – positiv resultattrend.</strong>
           </p>
         </div>
 
@@ -168,9 +164,7 @@ export default function DashboardOverview() {
           </h3>
           <p style={{ color: "#e5e7eb" }}>
             Likviditetsrisk inom 30 dagar om lagerfördelning ej justeras. AI
-            föreslår balansering mellan{" "}
-            <strong>Ekonomi</strong> och <strong>Lager</strong> för att säkra
-            stabilitet.
+            föreslår balansering mellan <strong>Ekonomi</strong> och <strong>Lager</strong> för att säkra stabilitet.
           </p>
 
           <div
@@ -205,8 +199,7 @@ export default function DashboardOverview() {
               lineHeight: "1.4",
             }}
           >
-            ⚙️ Detta är en strukturell prototyp. Nästa version kopplas till
-            AI-analys i realtid.
+            ⚙️ Detta är en strukturell prototyp. Nästa version kopplas till AI-analys i realtid.
           </p>
         </div>
       </div>
@@ -238,16 +231,9 @@ export default function DashboardOverview() {
               color: "#e5e7eb",
             }}
           >
-            <p>
-              <strong>Elias:</strong> Hej team, hur ser dagens rutter ut?
-            </p>
-            <p>
-              <strong>Sara:</strong> Jag tar norra rutten – Elon och Power.
-            </p>
-            <p>
-              <strong>AI:</strong> Förslag: Lägg till besök hos Mekonomen Solna
-              på vägen.
-            </p>
+            <p><strong>Elias:</strong> Hej team, hur ser dagens rutter ut?</p>
+            <p><strong>Sara:</strong> Jag tar norra rutten – Elon och Power.</p>
+            <p><strong>AI:</strong> Förslag: Lägg till besök hos Mekonomen Solna på vägen.</p>
           </div>
           <div style={{ marginTop: "10px", display: "flex", gap: "8px" }}>
             <input
@@ -304,4 +290,7 @@ export default function DashboardOverview() {
       </div>
     </div>
   );
-}
+};
+
+// Exportera även som default så båda import-sätten fungerar
+export default DashboardOverview;
