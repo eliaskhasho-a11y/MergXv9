@@ -1,68 +1,32 @@
-// src/pages/index.jsx
-import React from "react";
-
-/**
- * Minimal & safe placeholder-exports så att Vite/Rollup kan bygga utan fel.
- * Byt ut innehållet i respektive komponent när som helst, men behåll export-namnen.
- */
-
-// Dashboard (huvudsida)
-export const DashboardOverview = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 22, marginBottom: 8, fontWeight: 700 }}>
-      MergX V9 – Dashboard
-    </h2>
-    <p>✅ DashboardOverview exporterad korrekt från src/pages/index.jsx</p>
-  </div>
-);
-
-// AI-analys
-export const AiAnalys = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>AI-Analys</h2>
-    <p>✅ AiAnalys exporterad korrekt</p>
-  </div>
-);
-
-// KPI-panel
-export const KpiPanel = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>KPI-panel</h2>
-    <p>✅ KpiPanel exporterad korrekt</p>
-  </div>
-);
-
-// Händelser
-export const Handelser = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>Händelser</h2>
-    <p>✅ Handelser exporterad korrekt</p>
-  </div>
-);
-
-// Schema
-export const Schema = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>Schema</h2>
-    <p>✅ Schema exporterad korrekt</p>
-  </div>
-);
-
-// Uppgifter
-export const Uppgifter = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>Uppgifter</h2>
-    <p>✅ Uppgifter exporterad korrekt</p>
-  </div>
-);
-
-// Chatt
-export const Chatt = () => (
-  <div style={{ padding: 24, color: "#e5e7eb" }}>
-    <h2 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600 }}>Chatt</h2>
-    <p>✅ Chatt exporterad korrekt</p>
-  </div>
-);
-
-// Default export (behövs om något importerar "src/pages" som default)
-export default DashboardOverview;
+export { default as DashboardOverview } from "./DashboardOverview";
+export { default as AiAnalys } from "./AiAnalys";
+export { default as KpiPanel } from "./KpiPanel";
+export { default as Handelser } from "./Handelser";
+export { default as Schema } from "./Schema";
+export { default as Uppgifter } from "./Uppgifter";
+export { default as Chatt } from "./Chatt";
+export { default as Prestanda } from "./Prestanda";
+export { default as LagerOversikt } from "./LagerOversikt";
+export { default as Artiklar } from "./Artiklar";
+export { default as Bristvarningar } from "./Bristvarningar";
+export { default as LagerAforslag } from "./LagerAforslag";
+export { default as Budget } from "./Budget";
+export { default as Fakturor } from "./Fakturor";
+export { default as Kostnader } from "./Kostnader";
+export { default as KassaFlode } from "./KassaFlode";
+export { default as Kunder } from "./Kunder";
+export { default as Leads } from "./Leads";
+export { default as Kommunikation } from "./Kommunikation";
+export { default as Kundportal } from "./Kundportal";
+export { default as AiKarna } from "./AiKarna";
+export { default as AiCoach } from "./AiCoach";
+export { default as AiRapporter } from "./AiRapporter";
+export { default as Uppladdning } from "./Uppladdning";
+export { default as Bibliotek } from "./Bibliotek";
+export { default as Noteringar } from "./Noteringar";
+export { default as Forsaljning } from "./Forsaljning";
+export { default as KostnadMarginal } from "./KostnadMarginal";
+export { default as KpiExport } from "./KpiExport";
+export { default as Roller } from "./Roller";
+export { default as Integrationer } from "./Integrationer";
+export { default as Sakerhet } from "./Sakerhet";
