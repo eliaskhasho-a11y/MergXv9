@@ -7,7 +7,7 @@ export { default as AiAuditAnalytics } from "./AiAuditAnalytics";
 export { default as AiAuthGateway } from "./AiAuthGateway";
 export { default as AiAutoResponseEngine } from "./AiAutoResponseEngine";
 export { default as AiCloudRealtimeEngine } from "./AiCloudRealtimeEngine";
-export { default as AiCloudSynchHub } from "./AiCloudSynchHub";
+export { default as AiCloudSyncHub } from "./AiCloudSynchHub";
 export { default as AiCommandCenter } from "./AiCommandCenter";
 export { default as AiCommandConsole } from "./AiCommandConsole";
 export { default as AiMaintenanceScheduler } from "./AiMaintenanceScheduler";
