@@ -1,61 +1,35 @@
 import React from "react";
-import AiNotificationHub from "../components/ai/AiNotificationHub";
-import AiActionEngine from "../components/ai/AiActionEngine";
-import AiAuditFeed from "../components/ai/AiAuditFeed";
-import AiKpiAnalyzer from "../components/ai/AiKpiAnalyzer";
-import KpiTargetPanel from "../components/kpi/KpiTargetPanel";
-import EconomicChart from "../components/charts/EconomicChart";
-import AICommentBox from "../components/ai/AICommentBox";
+import EconomyChart from "../components/EconomyChart";
 import "./Ekonomi.css";
 
 export default function Ekonomi() {
-  // Mock-KPI-värden – byts mot AI eller backend senare
-  const kpi = [
-    { title: "Intäkter", value: "125 000 kr", change: "+18 %", trend: "upp" },
-    { title: "Kostnader", value: "73 400 kr", change: "-6 %", trend: "ner" },
-    { title: "Resultat", value: "51 600 kr", change: "+24 %", trend: "upp" },
-    { title: "Likviditet", value: "Stabil", change: "0 %", trend: "neutral" },
-  ];
-
   return (
-    <div className="page ekonomi-page">
-      <header className="eko-header glass-panel">
-        <h1>Ekonomimodul</h1>
-        <p>Analys och översikt i realtid</p>
-      </header>
+    <div className="ekonomi-container glass-bg">
+      <h2>Ekonomisk översikt</h2>
+      <p className="ekonomi-sub">Sammanfattning av intäkter, kostnader och resultat</p>
 
-      {/* KPI-panel */}
-      <section className="kpi-panel glass-panel">
-        {kpi.map((item, i) => (
-          <div key={i} className={`kpi-card trend-${item.trend}`}>
-            <h3>{item.title}</h3>
-            <p className="kpi-value">{item.value}</p>
-            <span className="kpi-change">{item.change}</span>
+      <div className="ekonomi-grid">
+        <div className="ekonomi-chart-card glass-card">
+          <h3>📊 Intäkter & kostnader – halvår</h3>
+          <EconomyChart />
+        </div>
+
+        <div className="ekonomi-info-card glass-card">
+          <h3>🧠 AI-Analys</h3>
+          <p>
+            MergX AI identifierar en positiv resultattrend. Förslag: öka fokus på
+            lönsamma produktlinjer inom tillbehörskategorin (kablar & laddare).
+          </p>
+          <ul>
+            <li>✅ Stark försäljning i maj och juni</li>
+            <li>⚙️ Kostnader stabila under perioden</li>
+            <li>📈 Resultatet ökade med 23 % senaste kvartalet</li>
+          </ul>
+          <div className="ai-summary-note">
+            <strong>AI-Notering:</strong> Fortsätt övervaka kostnadstrenden inför Q3.
           </div>
-        ))}
-      </section>
-
-      {/* AI-Analys av KPI-status */}
-<section className="ai-kpi-analyzer-section">
-  <AiKpiAnalyzer
-    data={[
-      { role: "Admin", target: 120000, current: 125000 },
-      { role: "Ekonomi", target: 50000, current: 51600 },
-      { role: "Lager", target: 2, current: 3 },
-      { role: "CRM", target: 85, current: 82 },
-    ]}
-  />
-</section>
-
-      {/* Ekonomisk graf */}
-      <section className="chart-section">
-        <EconomicChart />
-      </section>
-
-      {/* AI-kommentar (passiv just nu) */}
-      <section className="ai-section">
-        <AICommentBox />
-      </section>
+        </div>
+      </div>
     </div>
   );
 }
