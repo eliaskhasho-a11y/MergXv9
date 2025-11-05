@@ -1,12 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import { AiEventProvider } from "./components/ai/AiEventBus";
+
+// 🎨 Global CSS och font
+import "./index.css";
+
+/*
+  MergX V9 — Main Entry
+  ----------------------
+  • Initierar React root
+  • BrowserRouter för all routing
+  • Laddar hela App-komponenten
+  • Förberedd för framtida Context Providers (Auth, Theme, m.fl.)
+*/
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AiEventProvider>
+    <BrowserRouter>
       <App />
-    </AiEventProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
