@@ -1,0 +1,112 @@
+.ai-console {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  color: #e6e6e6;
+  min-height: 100vh;
+}
+
+.console-header {
+  margin-bottom: 20px;
+}
+.console-header h1 {
+  color: #00e5ff;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+.console-header p {
+  color: #bbb;
+}
+
+.module-status h2,
+.event-stream h2,
+.console-controls h2 {
+  color: #00e5ff;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.module-box {
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid transparent;
+  border-radius: 12px;
+  padding: 14px;
+  transition: all 0.3s;
+}
+.module-box h3 {
+  margin-bottom: 4px;
+  color: #fff;
+}
+.module-box.aktiv { border-left-color: #00ffb3; }
+.module-box.standby { border-left-color: #ffd93d; }
+
+.loadbar {
+  height: 6px;
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+.loadfill {
+  height: 6px;
+  background: linear-gradient(90deg,#00e5ff,#00ffb3);
+}
+
+.event-stream ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.event {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  border-left: 3px solid transparent;
+  background: rgba(0,0,0,0.25);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+.event .time { color: #777; margin-right: 6px; }
+.event .module { color: #00e5ff; margin-right: 6px; }
+.event.type-info { border-left-color: #00e5ff; }
+.event.type-warning { border-left-color: #ffd93d; }
+.event.type-alert { border-left-color: #ff5050; }
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn-group button {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.btn-group button:hover {
+  background: rgba(0,229,255,0.2);
+}
+
+.console-footnote {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 15px;
+}
