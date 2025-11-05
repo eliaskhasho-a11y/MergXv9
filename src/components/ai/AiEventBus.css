@@ -1,0 +1,38 @@
+.ai-eventbus-feed {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+}
+
+.bus-item {
+  background: rgba(25, 25, 25, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border-left: 3px solid transparent;
+  padding: 10px 14px;
+  color: #e6e6e6;
+  font-size: 0.85rem;
+  animation: slideUp 0.4s ease;
+}
+
+.bus-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.bus-item.type-info { border-left-color: #00e5ff; }
+.bus-item.type-warning { border-left-color: #ffd93d; }
+.bus-item.type-alert { border-left-color: #ff5050; }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
