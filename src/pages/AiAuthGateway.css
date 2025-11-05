@@ -1,0 +1,78 @@
+.ai-auth {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e6e6e6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-auth h1 {
+  color: #00e5ff;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.ai-auth p {
+  color: #bbb;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  gap: 10px;
+}
+.auth-form input {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px;
+}
+.login-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(0,229,255,0.25);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all .25s;
+}
+.login-btn:hover { background: rgba(0,229,255,0.35); }
+
+.logout-btn {
+  margin-top: 20px;
+  background: rgba(255,80,80,0.2);
+  border: none;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all .25s;
+}
+.logout-btn:hover { background: rgba(255,80,80,0.35); }
+
+.role {
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+.role-admin { background: rgba(0,229,255,0.2); color: #00e5ff; }
+.role-developer { background: rgba(255,217,61,0.2); color: #ffd93d; }
+.role-viewer { background: rgba(180,180,180,0.2); color: #ccc; }
+
+.auth-footnote {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 20px;
+}
