@@ -1,4 +1,5 @@
 import React from "react";
+import KpiTargetPanel from "../components/kpi/KpiTargetPanel";
 import EconomicChart from "../components/charts/EconomicChart";
 import AICommentBox from "../components/ai/AICommentBox";
 import "./Ekonomi.css";
