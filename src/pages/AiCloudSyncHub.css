@@ -1,0 +1,73 @@
+.ai-cloud {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  color: #e6e6e6;
+  min-height: 100vh;
+}
+
+.cloud-header h1 {
+  color: #00e5ff;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+.cloud-header p { color: #bbb; margin-bottom: 20px; }
+
+.cloud-status h2, .cloud-actions h2, .cloud-data h2 {
+  color: #00e5ff;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.status-indicator.online {
+  background: rgba(0,255,150,0.2);
+  border-left: 3px solid #00ffb3;
+}
+.status-indicator.offline {
+  background: rgba(255,80,80,0.15);
+  border-left: 3px solid #ff5050;
+}
+
+.cloud-actions {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+.cloud-actions button {
+  flex: 1;
+  background: rgba(255,255,255,0.08);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.cloud-actions button:hover { background: rgba(0,229,255,0.25); }
+
+.cloud-data pre {
+  background: rgba(0,0,0,0.25);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  overflow-x: auto;
+  max-height: 300px;
+  color: #ccc;
+}
+
+.cloud-footnote {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 20px;
+}
