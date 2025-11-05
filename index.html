@@ -1,65 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>MergX V9</title>
+    <meta name="description" content="MergX V9 – AI-driven affärs- och analysplattform byggd för B2B och administration" />
 
-    <!-- Metadata -->
-    <meta name="description" content="MergX V9 – AI-driven affärs- och B2B-plattform" />
-    <meta name="theme-color" content="#0a0a0a" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <!-- Font och style -->
+    <!-- 💎 Fonter & färgtema -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        background-color: #0a0a0a;
-        color: #fff;
-        font-family: "Inter", sans-serif;
-        height: 100%;
-        overflow: hidden;
-      }
 
-      #root {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* enkel laddningsskärm innan React mountar */
-      .loader {
-        width: 50px;
-        height: 50px;
-        border: 4px solid rgba(255,255,255,0.1);
-        border-top-color: #00eaff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        to { transform: rotate(360deg); }
-      }
-    </style>
+    <link rel="icon" type="image/svg+xml" href="/mergx-logo.svg" />
+    <meta name="theme-color" content="#0b0b0f" />
   </head>
 
   <body>
-    <div id="root">
-      <div class="loader"></div>
-    </div>
-
-    <!-- Startpunkt -->
-    <script type="module" src="./src/main.jsx"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
