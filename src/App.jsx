@@ -1,42 +1,44 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import Dashboard from "./pages/Dashboard.jsx";
-import CRM from "./pages/CRM.jsx";
-import Economy from "./pages/Economy.jsx";
-import Inventory from "./pages/Inventory.jsx";
-import AISalesMap from "./pages/AISalesMap.jsx";
-import TeamChat from "./pages/TeamChat.jsx";
+import { Routes, Route, Link } from "react-router-dom";
+
+// Sidor
+import Dashboard from "./pages/Dashboard";
+import CRM from "./pages/CRM";
+import Ekonomi from "./pages/Ekonomi";
+import Lager from "./pages/Lager";
+import AIMap from "./pages/AIMap";
+import TeamChat from "./pages/TeamChat";
+
+// CSS
 import "./App.css";
 
 export default function App() {
   return (
-    <Router>
-      <div className="app-layout">
-        <aside className="sidebar glass">
-          <h2 className="logo">MergX V9</h2>
-          <nav>
-            <NavLink to="/" end>
-              🏠 Dashboard
-            </NavLink>
-            <NavLink to="/crm">📋 CRM</NavLink>
-            <NavLink to="/economy">💰 Ekonomi</NavLink>
-            <NavLink to="/inventory">📦 Lager</NavLink>
-            <NavLink to="/ai-map">🗺️ AI-Karta</NavLink>
-            <NavLink to="/chat">💬 Teamchatt</NavLink>
-          </nav>
-        </aside>
+    <div className="app-container">
+      <aside className="sidebar">
+        <h2 className="logo">MergX V9</h2>
+        <nav>
+          <ul>
+            <li><Link to="/">🏠 Dashboard</Link></li>
+            <li><Link to="/crm">📊 CRM</Link></li>
+            <li><Link to="/ekonomi">💰 Ekonomi</Link></li>
+            <li><Link to="/lager">📦 Lager</Link></li>
+            <li><Link to="/ai-karta">🧭 AI-Karta</Link></li>
+            <li><Link to="/teamchatt">💬 Teamchatt</Link></li>
+          </ul>
+        </nav>
+      </aside>
 
-        <main className="main-content glass">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/crm" element={<CRM />} />
-            <Route path="/economy" element={<Economy />} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="/ai-map" element={<AISalesMap />} />
-            <Route path="/chat" element={<TeamChat />} />
-          </Routes>
-        </main>
-      </div>
-    </Router>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/crm" element={<CRM />} />
+          <Route path="/ekonomi" element={<Ekonomi />} />
+          <Route path="/lager" element={<Lager />} />
+          <Route path="/ai-karta" element={<AIMap />} />
+          <Route path="/teamchatt" element={<TeamChat />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
