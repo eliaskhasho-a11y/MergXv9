@@ -11,7 +11,7 @@ import {
   Legend,
 } from "recharts";
 
-// 📊 Data
+// 📊 Dummydata (Ekonomi)
 const data = [
   { month: "Jan", income: 50000, cost: 35000, result: 15000 },
   { month: "Feb", income: 75000, cost: 49000, result: 26000 },
@@ -49,7 +49,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-// 🧠 Dashboard – namngiven export
+// 🧠 Dashboard huvudkomponent
 export const DashboardOverview = () => {
   return (
     <div style={{ padding: "20px" }}>
@@ -91,7 +91,7 @@ export const DashboardOverview = () => {
         </div>
       </div>
 
-      {/* GRAF + AI-KOMMENTAR */}
+      {/* 📊 GRAF + 🤖 AI-KOMMENTAR */}
       <div
         style={{
           display: "grid",
@@ -109,45 +109,19 @@ export const DashboardOverview = () => {
             boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
           }}
         >
-          <h3 style={{ marginBottom: "10px", color: "#e2e8f0" }}>
-            Ekonomisk översikt
-          </h3>
+          <h3 style={{ marginBottom: "10px", color: "#e2e8f0" }}>Ekonomisk översikt</h3>
           <ResponsiveContainer width="100%" height={320}>
-            <ComposedChart
-              data={data}
-              margin={{ top: 30, right: 30, left: 0, bottom: 10 }}
-            >
+            <ComposedChart data={data} margin={{ top: 30, right: 30, left: 0, bottom: 10 }}>
               <CartesianGrid stroke="rgba(255,255,255,0.08)" />
               <XAxis dataKey="month" stroke="#9ca3af" />
               <YAxis stroke="#9ca3af" />
               <Tooltip content={<CustomTooltip />} />
               <Legend />
-              <Bar
-                dataKey="income"
-                fill="#38bdf8"
-                radius={[8, 8, 0, 0]}
-                barSize={30}
-                name="Intäkter"
-              />
-              <Bar
-                dataKey="cost"
-                fill="#a855f7"
-                radius={[8, 8, 0, 0]}
-                barSize={30}
-                name="Kostnader"
-              />
-              <Line
-                type="monotone"
-                dataKey="result"
-                stroke="#22c55e"
-                strokeWidth={3}
-                name="Resultat"
-              />
+              <Bar dataKey="income" fill="#38bdf8" radius={[8, 8, 0, 0]} barSize={30} name="Intäkter" />
+              <Bar dataKey="cost" fill="#a855f7" radius={[8, 8, 0, 0]} barSize={30} name="Kostnader" />
+              <Line type="monotone" dataKey="result" stroke="#22c55e" strokeWidth={3} name="Resultat" />
             </ComposedChart>
           </ResponsiveContainer>
-          <p style={{ fontSize: "14px", marginTop: "10px", color: "#a1a1aa" }}>
-            🔍 Senaste notering: <strong>Bästa månaden hittills – positiv resultattrend.</strong>
-          </p>
         </div>
 
         {/* 🤖 AI-KOMMENTAR */}
@@ -159,129 +133,30 @@ export const DashboardOverview = () => {
             boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
           }}
         >
-          <h3 style={{ color: "#38bdf8", marginBottom: "10px" }}>
-            AI-Kommentar
-          </h3>
+          <h3 style={{ color: "#38bdf8", marginBottom: "10px" }}>AI-Kommentar</h3>
           <p style={{ color: "#e5e7eb" }}>
-            Likviditetsrisk inom 30 dagar om lagerfördelning ej justeras. AI
-            föreslår balansering mellan <strong>Ekonomi</strong> och <strong>Lager</strong> för att säkra stabilitet.
-          </p>
-
-          <div
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              padding: "10px 12px",
-              borderRadius: "8px",
-              marginTop: "10px",
-            }}
-          >
-            <p style={{ fontSize: "13px", color: "#facc15" }}>Risknivå: Medel</p>
-          </div>
-
-          <ul
-            style={{
-              fontSize: "13px",
-              marginTop: "12px",
-              color: "#d4d4d8",
-              lineHeight: "1.6",
-            }}
-          >
-            <li>📈 Sammanfattar trender i realtid via MergX AI-bas.</li>
-            <li>🧩 Föreslår nästa åtgärd per modul (Ekonomi, Lager, CRM, Team).</li>
-            <li>⚙️ Skapar notiser & förslag baserat på dataförändringar.</li>
-          </ul>
-
-          <p
-            style={{
-              fontSize: "11px",
-              color: "#6b7280",
-              marginTop: "15px",
-              lineHeight: "1.4",
-            }}
-          >
-            ⚙️ Detta är en strukturell prototyp. Nästa version kopplas till AI-analys i realtid.
+            Likviditetsrisk inom 30 dagar om lagerfördelning ej justeras. AI föreslår balansering mellan{" "}
+            <strong>Ekonomi</strong> och <strong>Lager</strong> för att säkra stabilitet.
           </p>
         </div>
       </div>
 
       {/* 🗨️ TEAMCHATT & AI-AKTIVITET */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "20px",
-        }}
-      >
-        {/* 🗨️ TEAMCHATT */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            borderRadius: "14px",
-            padding: "20px",
-            boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h3 style={{ color: "#a855f7", marginBottom: "10px" }}>💬 Teamchatt</h3>
-          <div
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              borderRadius: "10px",
-              padding: "12px",
-              minHeight: "120px",
-              color: "#e5e7eb",
-            }}
-          >
-            <p><strong>Elias:</strong> Hej team, hur ser dagens rutter ut?</p>
-            <p><strong>Sara:</strong> Jag tar norra rutten – Elon och Power.</p>
-            <p><strong>AI:</strong> Förslag: Lägg till besök hos Mekonomen Solna på vägen.</p>
-          </div>
-          <div style={{ marginTop: "10px", display: "flex", gap: "8px" }}>
-            <input
-              type="text"
-              placeholder="Skriv ett meddelande..."
-              style={{
-                flex: 1,
-                background: "rgba(255,255,255,0.07)",
-                border: "none",
-                borderRadius: "8px",
-                padding: "10px",
-                color: "#fff",
-              }}
-            />
-            <button
-              style={{
-                background: "#38bdf8",
-                border: "none",
-                color: "#000",
-                borderRadius: "8px",
-                padding: "0 16px",
-                cursor: "pointer",
-              }}
-            >
-              Skicka
-            </button>
-          </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+        {/* TEAMCHATT */}
+        <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: "14px", padding: "20px" }}>
+          <h3 style={{ color: "#a855f7" }}>💬 Teamchatt</h3>
+          <p style={{ color: "#e5e7eb" }}>
+            Elias: Hej team, hur ser dagens rutter ut? <br />
+            Sara: Jag tar norra rutten – Elon och Power. <br />
+            AI: Förslag: Lägg till besök hos Mekonomen Solna på vägen.
+          </p>
         </div>
 
-        {/* 🤖 AI-AKTIVITET */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.04)",
-            borderRadius: "14px",
-            padding: "20px",
-            boxShadow: "0 4px 30px rgba(0,0,0,0.1)",
-          }}
-        >
-          <h3 style={{ color: "#38bdf8", marginBottom: "10px" }}>🤖 AI-Aktivitet</h3>
-          <ul
-            style={{
-              color: "#d4d4d8",
-              fontSize: "14px",
-              listStyleType: "none",
-              paddingLeft: 0,
-              lineHeight: "1.8",
-            }}
-          >
+        {/* AI-AKTIVITET */}
+        <div style={{ background: "rgba(255,255,255,0.04)", borderRadius: "14px", padding: "20px" }}>
+          <h3 style={{ color: "#38bdf8" }}>🤖 AI-Aktivitet</h3>
+          <ul style={{ color: "#d4d4d8", fontSize: "14px" }}>
             <li>✅ Uppdaterade försäljningsrutter – 10:32</li>
             <li>📄 Genererade rapport: ”Ekonomisk balans – Q4”</li>
             <li>💡 Förslag: ”Minska lagerkostnad för USB-C 1 m kablar”</li>
@@ -292,5 +167,18 @@ export const DashboardOverview = () => {
   );
 };
 
-// Exportera även som default så båda import-sätten fungerar
+// 🧩 Dummy-komponenter för att build ska fungera (ersätts senare)
+export const AiAnalys = () => (
+  <div style={{ padding: "40px", color: "white" }}>AI-Analys laddad korrekt.</div>
+);
+
+export const KpiPanel = () => (
+  <div style={{ padding: "40px", color: "white" }}>KPI-panel laddad korrekt.</div>
+);
+
+export const Handelser = () => (
+  <div style={{ padding: "40px", color: "white" }}>Händelser laddad korrekt.</div>
+);
+
+// ✅ Exportera även DashboardOverview som default
 export default DashboardOverview;
