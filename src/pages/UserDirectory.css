@@ -1,0 +1,65 @@
+.userdir {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e6e6e6;
+  min-height: 100vh;
+}
+.userdir-header h1 { color:#00e5ff; font-size:1.6rem; margin-bottom:6px; }
+.userdir-header p { color:#bbb; margin-bottom:20px; }
+
+.userform { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:14px; }
+.userform input, .userform select {
+  background:rgba(255,255,255,0.08);
+  border:none; border-radius:8px; padding:8px 10px; color:#fff;
+}
+.userform button {
+  background:rgba(0,229,255,0.25);
+  border:none; border-radius:8px; color:#fff; padding:8px 14px; cursor:pointer;
+  transition:all .25s;
+}
+.userform button:hover { background:rgba(0,229,255,0.35); }
+
+.search { margin-bottom:12px; }
+.search input {
+  width:100%; background:rgba(255,255,255,0.06);
+  border:none; border-radius:8px; padding:8px 10px; color:#fff;
+}
+
+.usergrid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+.usercard {
+  background:rgba(0,0,0,0.25);
+  border-radius:12px;
+  padding:14px;
+  border-left:3px solid rgba(255,255,255,0.08);
+}
+.usercard.inactive { opacity:0.6; }
+.uc-top { display:flex; justify-content:space-between; align-items:center; }
+.uc-top h3 { margin:0; font-size:1rem; }
+.status {
+  font-size:0.8rem; padding:2px 8px; border-radius:8px;
+}
+.status.active { background:rgba(0,255,179,0.25); color:#00ffb3; }
+.status.inactive { background:rgba(255,217,61,0.25); color:#ffd93d; }
+
+.role-select { margin-top:6px; display:flex; align-items:center; gap:6px; }
+.role-select select {
+  background:rgba(255,255,255,0.08); border:none; border-radius:8px;
+  color:#fff; padding:4px 8px;
+}
+
+.actions { display:flex; gap:8px; margin-top:10px; }
+.actions button {
+  flex:1; background:rgba(255,255,255,0.08); color:#fff;
+  border:none; border-radius:8px; padding:6px 10px; cursor:pointer;
+}
+.actions button:hover { background:rgba(255,255,255,0.16); }
+.actions .danger { background:rgba(255,80,80,0.25); }
+.actions .danger:hover { background:rgba(255,80,80,0.35); }
+
+.userdir-foot { text-align:right; margin-top:18px; font-size:0.8rem; opacity:0.6; }
