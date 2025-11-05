@@ -1,0 +1,95 @@
+.economy-page {
+  padding: 2rem;
+  color: #fff;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-box {
+  margin-bottom: 2rem;
+}
+.header-box h2 {
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.header-box p {
+  color: #aaa;
+}
+
+.kpi-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.kpi-card {
+  flex: 1;
+  text-align: left;
+}
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #00e5ff;
+}
+.kpi-value.purple {
+  color: #c08aff;
+}
+.kpi-value.green {
+  color: #aaffaa;
+}
+
+.chart-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+.chart-box h3 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.note {
+  margin-top: 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.ai-box h3 {
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+.ai-box p {
+  color: #ccc;
+  margin-bottom: 0.6rem;
+}
+.risk-tag {
+  display: inline-block;
+  background: #ffd54f;
+  color: #000;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+.ai-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+.ai-list li {
+  margin-bottom: 0.4rem;
+  color: #b8c4cc;
+}
+.ai-footer {
+  font-size: 0.8rem;
+  color: #888;
+  display: block;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 0.6rem;
+}
