@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #0b0b0f;
+  color: #fff;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ▒ SIDOMENY ▒ */
+.sidebar {
+  width: 230px;
+  background: rgba(20, 20, 25, 0.85);
+  backdrop-filter: blur(25px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00e5ff;
+  margin-bottom: 20px;
+}
+.logo span {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar a {
+  color: #e6e6e6;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #00e5ff;
+}
+
+/* ▒ HUVUDINNEHÅLL ▒ */
+.main-content {
+  flex: 1;
+  padding: 20px 26px;
+  overflow-y: auto;
+}
+
+/* ▒ 404 ▒ */
+.notfound {
+  margin-top: 10%;
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+}
+.notfound h2 {
+  color: #00e5ff;
+}
+.backbtn {
+  display: inline-block;
+  margin-top: 12px;
+  background: rgba(0,229,255,0.25);
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+}
+.backbtn:hover {
+  background: rgba(0,229,255,0.35);
+}
