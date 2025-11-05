@@ -1,0 +1,70 @@
+.ai-sec {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+  color: #e6e6e6;
+  min-height: 100vh;
+}
+
+.sec-header h1 { color: #00e5ff; font-size: 1.6rem; margin-bottom: 6px; }
+.sec-header p { color: #bbb; margin-bottom: 20px; }
+
+.sec-kpi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 14px; margin-bottom: 20px;
+}
+.kpi-box {
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0;
+  color: #fff;
+}
+.kpi-box.low { background: rgba(0,255,150,0.15); border-left: 3px solid #00ffb3; }
+.kpi-box.medium { background: rgba(255,217,61,0.15); border-left: 3px solid #ffd93d; }
+.kpi-box.high { background: rgba(255,80,80,0.15); border-left: 3px solid #ff5050; }
+
+.chart-section h2 { color: #00e5ff; font-size: 1.15rem; margin-bottom: 10px; }
+
+.feed-list { display: flex; flex-direction: column; gap: 10px; }
+.feed-item {
+  background: rgba(0,0,0,0.25);
+  padding: 10px 12px;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.feed-item.level-low { border-left-color: #00ffb3; }
+.feed-item.level-medium { border-left-color: #ffd93d; }
+.feed-item.level-high { border-left-color: #ff5050; }
+.feed-item p { flex: 1; margin: 0 10px; font-size: 0.85rem; color: #ccc; }
+.tag {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  background: rgba(255,255,255,0.1);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.stream-box {
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+.stream-event { padding: 4px 0; }
+.stream-event.type-info { color: #00e5ff; }
+.stream-event.type-warning { color: #ffd93d; }
+.stream-event.type-alert { color: #ff5050; }
+
+.sec-footnote {
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 25px;
+}
