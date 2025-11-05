@@ -140,6 +140,7 @@ export default function UserDirectory() {
               </div>
               <p>{u.email}</p>
               <div className="role-select">
-                <label>Roll:</label>
-                <select value={u.role} onChange={(e) => changeRole(u.id, e.target.value)}>
-                  <option>Admin</o
+               <label>Roll:</label>
+<select value={u.role} onChange={(e) => changeRole(u.id, e.target.value)}>
+  <option>Admin</option>
+</select>
