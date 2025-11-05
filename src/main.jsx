@@ -1,12 +1,12 @@
-import React, { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css"; // global styling
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { AiEventProvider } from "./components/ai/AiEventBus";
 
-const rootEl = document.getElementById("root");
-
-createRoot(rootEl).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <AiEventProvider>
+      <App />
+    </AiEventProvider>
+  </React.StrictMode>
 );
