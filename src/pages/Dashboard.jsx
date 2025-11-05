@@ -11,7 +11,9 @@ export default function Dashboard() {
         <h1>MergX V9 Dashboard</h1>
         <p>Smarter · Simpler · Stronger</p>
       </header>
+      
 <KpiPanel />
+      
       <section className="dash-content">
         <div className="chart-section">
           <EconomicChart />
