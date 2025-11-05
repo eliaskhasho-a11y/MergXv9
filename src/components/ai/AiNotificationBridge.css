@@ -1,0 +1,62 @@
+.ai-bridge {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  color: #e6e6e6;
+}
+
+.ai-bridge h2 {
+  color: #00e5ff;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.bridge-desc {
+  color: #bcbcbc;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.bridge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bridge-item {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.25);
+  border-left: 3px solid transparent;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+.bridge-item.type-info    { border-left-color: #00e5ff; }
+.bridge-item.type-warning { border-left-color: #ffd93d; }
+.bridge-item.type-alert   { border-left-color: #ff5050; }
+
+.bridge-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.bridge-item p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+}
+
+.bridge-footnote {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: right;
+}
