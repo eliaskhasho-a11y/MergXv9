@@ -1,0 +1,79 @@
+.ai-diagnostics {
+  margin-top: 25px;
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  color: #e6e6e6;
+}
+
+.ai-diagnostics h2 {
+  color: #00e5ff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.diag-desc {
+  color: #bcbcbc;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.metric {
+  margin-bottom: 14px;
+}
+
+.metric label {
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 4px;
+  color: #ccc;
+}
+
+.bar {
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.fill {
+  height: 100%;
+  transition: width 0.6s ease, background 0.3s;
+}
+
+.metric span {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.latency-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00ffb3;
+  margin-top: 2px;
+}
+
+.health-status {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+}
+
+.health-status.optimal { border-left: 3px solid #00ffb3; color: #00ffb3; }
+.health-status.stabil { border-left: 3px solid #ffd93d; color: #ffd93d; }
+.health-status.belastad { border-left: 3px solid #ff5050; color: #ff5050; }
+
+.diag-footnote {
+  display: block;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  text-align: right;
+}
